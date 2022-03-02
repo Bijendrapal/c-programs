@@ -1,0 +1,81 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace get_set__method
+{
+    class student
+    {
+        private int roll;
+        private string name;
+        private string sub;
+
+        public int Roll
+        {
+            set
+            {
+                roll = value;
+            }
+            get
+            {
+                return roll;
+            }
+        }
+        public string Name
+        {
+            set
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                    Console.WriteLine("enter the name ! ");
+                }
+                
+                else
+                {
+                    name = value;
+                }
+
+            }
+            get
+            {
+                return name;
+            }
+        }
+        public string subj
+        {
+            set
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                    Console.WriteLine("enter subject !");
+                }
+                else
+                {
+                    sub = value;
+                }
+            }
+            get
+            {
+                return sub;
+            }
+        }
+
+    }
+      
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            student obj = new student();
+            obj.Roll = 12;
+            obj.Name = "shhivam shrama";
+            obj.subj = "hindi";
+            Console.WriteLine(" roll no is = {0} \n Name is = {1} \n subject is = {2} " , obj.Roll, obj.Name, obj.subj);
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.Read();
+        }
+    }
+ }
